@@ -65,7 +65,9 @@ cs服务使用了profile进行流量行为修改，可过一些特征检测(http
 
 ### jndi工具
 
-现在反序列漏洞场景非常多，JNDIExpolit(https://github.com/WhiteHSBG/JNDIExploit)这个工具方便了很多漏洞利用时的操作，因此将其集成与此，下面命令参考中的ip和端口和根据当前部署环境和开启端口自动变化，直接复制就可以了
+现在反序列漏洞场景非常多，JNDIExpolit(https://github.com/WhiteHSBG/JNDIExploit) 
+
+这个工具方便了很多漏洞利用时的操作，因此将其集成与此，下面命令参考中的ip和端口和根据当前部署环境和开启端口自动变化，直接复制就可以了
 
 
 
