@@ -1,0 +1,11 @@
+[common]
+server_addr = 222.211.232.197
+server_port = 30009
+token = frpToken
+
+[socks5-clientname]
+type = tcp
+remote_port = remoteport
+loca_port = remoteport
+use_encryption = true
+use_compression = true

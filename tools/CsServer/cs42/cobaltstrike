@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/ivan/.local/share/cobalt
+export HOME=$PWD/home
+mkdir -p "$HOME"
+export _JAVA_OPTIONS="$_JAVA_OPTIONS"
+java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -jar cobaltstrike.jar $*

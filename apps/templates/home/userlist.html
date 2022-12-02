@@ -1,0 +1,95 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} 用户列表 {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="box-header with-border">
+                        {% include 'layouts/message.html' %}
+                    </div>
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">用户列表</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">用户列表</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <!-- [ basic-table ] start -->
+                                <div class="col-xl-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>用户列表</h5>
+                                            <span class="d-block m-t-5"><code>当前用户信息</code></span>
+                                        </div>
+                                        <div class="card-block table-border-style">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th style="vertical-align: middle !important;text-align: center; font-size: 16px;">用户名</th>
+                                                            <th style="vertical-align: middle !important;text-align: center; font-size: 16px;">角色</th>
+                                                            <th style="vertical-align: middle !important;text-align: center; font-size: 16px;">描述</th>
+                                                            <th style="vertical-align: middle !important;text-align: center; font-size: 16px;width:50px;">操作</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {% for row in form.userinfo %}
+                                                        <tr style="height: 75px;">
+                                                            <th scope="row">{{row.id}}</th>
+                                                            <td style="vertical-align: middle !important;text-align: center; font-size: 16px;">{{row.username}}</td>
+                                                            <td style="vertical-align: middle !important;text-align: center; font-size: 16px;">{% if row.admin == 1 %}管理员{% else %}普通用户{% endif %}</td>
+                                                            <td style="vertical-align: middle !important;text-align: center; font-size: 16px;">{{row.dec}}</td>
+                                            
+                                                            <td style="width:50px;vertical-align: middle !important;text-align: center; font-size: 16px;">{% if form.isadmin == True and row.id != 1 %}
+                                                                <a href="/userlist?action=reset&uid={{row.id}}">
+                                                                    <button type="button" class="button btn btn-outline-success">重置密码</button>
+                                                                </a>
+                                                                <a href="/userlist?action=delete&uid={{row.id}}">
+                                                                    <button type="button" class="button btn btn-outline-danger">删除用户</button>
+                                                                </a>
+                                                                {% else %}{% endif %}</td>
+                                                        </tr>
+                                                        {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- [ basic-table ] end -->
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,65 @@
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+            <a href="/" class="b-brand">
+                <div class="b-bg">
+                    <i class="feather icon-trending-up"></i>
+                </div>
+                <span class="b-title">X</span>
+            </a>
+            <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+        </div>
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                <li class="nav-item pcoded-menu-caption">
+
+
+                <li data-username="Exp" 
+                    class="nav-item {% if 'index' in segment %} active {% endif %}">
+                    <a href="/" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
+                            class="pcoded-mtext">首页</span></a>
+
+                <li class="nav-item pcoded-menu-caption">
+                    <label>平台部署</label>
+                </li>
+                <li data-username="ptlist"
+                    class="nav-item pcoded-hasmenu ">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span
+                            class="pcoded-mtext">平台列表</span></a>
+                    <ul class="pcoded-submenu">
+
+                        {% for row in attacklist.attackserver %}
+                        <li class=""><a href="/AttackServer?id={{row.id}}" class="">{{row.chinaname}}</a></li>
+                        {% endfor %}
+                        
+                    </ul>
+                </li>
+
+                <li class="nav-item pcoded-menu-caption">
+                    <label>用户管理</label>
+                </li>
+
+                <li data-username="userlist" 
+                    class="nav-item {% if 'userlist' in segment %} active {% endif %}">
+                    <a href="/userlist" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
+                            class="pcoded-mtext">用户列表</span></a>
+                </li>
+
+                <li data-username="AddUser" 
+                    class="nav-item {% if 'AddUser' in segment %} active {% endif %}">
+                    <a href="/AddUser" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
+                            class="pcoded-mtext">添加用户</span></a>
+                </li>
+
+                <li data-username="ChangePass" 
+                    class="nav-item {% if 'ChangePass' in segment %} active {% endif %}">
+                    <a href="/ChangePass" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
+                            class="pcoded-mtext">修改密码</span></a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- [ navigation menu ] end -->

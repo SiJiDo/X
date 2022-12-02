@@ -1,0 +1,220 @@
+<h5>漏洞名称</h5>
+<hr>
+<form action="" method="POST">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- header配置 -->
+                    <div class="form-group">
+                        <label>header参数配置</label>
+                        {{expSettingForm.headConfig(style="resize:none;", class="form-control", rows="3")}}
+                    </div>
+
+                    <!-- post参数配置 -->
+                    <div class="form-group">
+                        <label>post参数配置</label>
+                        {{expSettingForm.postParam(style="resize:none;", class="form-control", rows="3")}}
+                    </div>
+
+                    <!-- get参数配置 -->
+                    <div class="form-group">
+                        <label>get参数配置</label>
+                        {{expSettingForm.getParam(style="resize:none;", class="form-control", rows="3")}}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!--请求方式-->
+                    <div class="form-group">
+                        <label>请求方式</label>
+                        {{expSettingForm.method(class="form-control", placeholder="请选择")}}
+                    </div>
+
+                    <!--请求体传参形式-->
+                    <div class="form-group">
+                        <label>传参格式</label>
+                        {{expSettingForm.application(class="form-control", placeholder="请选择")}}
+                    </div>
+
+                    <!--ldap配置-->
+                    <div class="form-group">
+                        <label>ldap连接地址</label>
+                        {{expSettingForm.ldapAddr(class="form-control")}}
+                        <small id="ldapurlhelp" class="form-text text-muted">反序列化漏洞需填入ldap地址</small>
+                    </div>
+
+                    <!--特殊字段1-->
+                    <div class="form-group">
+                        <label>代理配置</label>
+                        {{expSettingForm.proxy(class="form-control")}}
+                    </div>
+
+                    <!--特殊字段2-->
+                    <div class="form-group">
+                        <label>代理池使用</label>
+                        {{expSettingForm.proxyPool(class="form-control")}}
+                        <small id="ldapurlhelp" class="form-text text-muted">存在代理配置时，该配置不生效</small>
+                    </div>
+
+                </div>
+            </div>
+        <br>
+        <div class="col-sm-12">
+            漏洞利用
+            <hr>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active text-uppercase" id="execute-tab" data-toggle="tab" href="#execute" role="tab" aria-controls="execute" aria-selected="true">命令执行</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">获取基础信息</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase" id="otherattack-tab" data-toggle="tab" href="#otherattack" role="tab" aria-controls="otherattack" aria-selected="false">其他利用</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase" id="log-tab" data-toggle="tab" href="#log" role="tab" aria-controls="log" aria-selected="false">请求日志</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="execute" role="tabpanel" aria-labelledby="execute-tab">
+                    
+                    {% if 1==0 %}
+                    <!--直接反馈回显类漏洞-->
+                    <div class="input-group">
+                        <input name="executecmd" type="text" id="" class="form-control" placeholder="whoami">
+                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">执行</button></div>  
+                    </div>
+                    <hr>
+                    <!--回显内容-->
+                    <div class="form-group">
+                        <label>执行结果</label>
+                        {{expSettingForm.CommandResults(style="resize:none;", class="form-control", rows="7", disabled=true)}}
+                    </div>
+
+                    {% else %}
+                    <!--反序列化漏洞-->
+                        <label>内存马</label>
+                        <div class="input-group">
+                        {{expSettingForm.ldapmemshell(class="form-control", placeholder="请选择")}}
+                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">执行</button></div>  
+                        </div>
+                        <hr>
+
+                        <label>反弹shell</label>
+                        {{expSettingForm.ldaprev(class="form-control", placeholder="请选择")}}
+                        <div class="input-group">
+                            {{expSettingForm.ldapRevip(class="form-control", placeholder="IP地址")}}
+                            {{expSettingForm.ldapRevport(class="form-control", placeholder="端口")}}
+                            <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">执行</button></div>  
+                        </div>
+                        <hr>
+                        <label>执行回显命令</label>
+                        {{expSettingForm.ldapsearch(class="form-control", placeholder="请选择")}}
+                        <div class="input-group">
+                            <input name="ldapcmd" type="text" id="" class="form-control" placeholder="whoami">
+                            <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">执行</button></div>  
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label>执行结果</label>
+                            {{expSettingForm.CommandResults(style="resize:none;", class="form-control", rows="7", disabled=true)}}
+                        </div>
+
+                    {% endif %}
+
+
+                </div>
+                <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+                    <div class="row">     
+                        <div class="col-sm-9">
+                            <span>操作系统: <code>linux(x86)</code></span><br>
+                            <span>当前用户: <code>root</code></span><br>
+                            <span>是否通外网: <code>是</code></span><br>
+                            <span>杀软情况: <code>火绒,360</code></span><br>
+                            <span>远程登录情况: <code>3389:开放,22:开放</code></span><br>
+                            <span>是否是域环境:<code>是(域名:xxxx.xxx.local)</code>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                            <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">获取</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                    
+
+                </div>
+
+                <div class="tab-pane fade" id="otherattack" role="tabpanel" aria-labelledby="otherattack-tab">
+                    <span>载荷工具存放目录</span>
+                    <hr>
+                    <div class="input-group">
+                        <input name="msf" type="text" value="C:\Users\public\music\" class="form-control" placeholder="/tmp">
+                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">保存</button></div>  
+                    </div>
+                    <hr>
+
+                    <span>通过远程下载执行上线</span>
+                    <hr>
+                    <div class="input-group">
+                        <input name="msf" type="text" id="" class="form-control" placeholder="MSF马地址(http://ip:port/xxx)">
+                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">加载</button></div>  
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        <input name="cs" type="text" id="" class="form-control" placeholder="CS马地址(http://ip:port/xxx.exe)">
+                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">加载</button></div>  
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        <input type="webshell" id="" class="form-control" placeholder="webshell地址(http://ip:port/xxx.php)">
+                        <input type="webpath" id="" class="form-control" placeholder="放入web路径(/var/www/html/webshell.php)">
+                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">加载</button></div>  
+                    </div>
+                    <hr>
+                    <span>搭建FRP</span>
+                    <hr>
+                    <div class="input-group">
+                        <input type="text" name="frpname" id="" class="form-control" placeholder="目标名称(不填随机)">
+                        <input type="text" name="frpc" id="" class="form-control" placeholder="frpc地址(http://ip:port/xxx)(不填自动)">
+                        <input type="text" name="frpcini" id="" class="form-control" placeholder="frpc.ini地址(http://ip:port/xxx.ini)(不填自动)">
+                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">加载</button></div>  
+                    </div>
+
+                    <hr>
+                    <span>搭建Neo-reGeorg</span>
+                    <hr>
+                    <div class="input-group">
+                        <input type="webshell" id="" class="form-control" placeholder="regeorg路径地址(http://ip:port/xxx.php)(不填自动)">
+                        <input type="webpath" id="" class="form-control" placeholder="放入web路径(/var/www/html/webshell.php)">
+                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="submit">加载</button></div>  
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="log" role="tabpanel" aria-labelledby="log-tab">
+                    <p class="mb-0">日志选择</p>
+                    <div class="input-group">
+                        {{logForm.Expsearch(class="form-control", placeholder="请选择")}}
+                        <div class="input-group-append"><button name="Logsearch" class="btn btn-outline-secondary" type="submit">查看</button></div>  
+                        <div class="input-group-append"><button name="export" class="btn btn-outline-secondary" type="submit">导出</button></div> 
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label>请求体</label>
+                            {{logForm.reqeustLog(style="resize:none;", class="form-control", rows="25", disabled=true)}}
+                        </div>
+                        <div class="col-sm-6">
+                            <label>响应体</label>
+                            {{logForm.responseLog(style="resize:none;", class="form-control", rows="25", disabled=true)}}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+</form>

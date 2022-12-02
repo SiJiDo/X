@@ -1,0 +1,77 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} 添加用户 {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="box-header with-border">
+                        {% include 'layouts/message.html' %}
+                    </div>
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">添加用户</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">添加用户</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="card">
+                                <form action="" method="POST">
+                                <div class="card-body text-center">
+                                    <div class="mb-4">
+                                        <i class="feather icon-user-plus auth-icon"></i>
+                                    </div>
+                                    <h3 class="mb-4">添加用户</h3>
+                                    <div class="input-group mb-4">
+                                        <input type="text" class="form-control" name="username" placeholder="用户名">
+                                    </div>
+                                    <div class="input-group mb-4">
+                                        <input type="text" class="form-control" name="password" placeholder="密码">
+                                    </div>
+                                    <div class="input-group mb-4">
+                                        <input type="text" class="form-control" name="dec" placeholder="描述">
+                                    </div>
+                                    
+                                    <div class="checkbox checkbox-fill d-inline" name="admin" value="1">
+                                        <input type="checkbox" name="admin" id="admin">
+                                        <label for="admin" class="cr">是否为管理员</label>
+                                    </div>
+                                    <br>
+                                    <button class="btn btn-primary shadow-2 mb-4">注册</button>
+                                </div>
+                                </form>
+
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

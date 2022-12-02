@@ -1,0 +1,146 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Web目录管理 {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+
+                    <div class="box-header with-border">
+                        {% include 'layouts/message.html' %}
+                    </div>
+                    
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Web目录管理</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">Web目录管理</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                             <!-- [ stiped-table ] start -->
+                             <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h5>WEB目录</h5>
+                                                <span class="d-block m-t-5">系统路径:<br> <code>tools/FileWeb/</code> </span>
+                                                <span class="d-block m-t-5">WEB目录: <br><code>http://{{form.now_ip}}:{{form.attackServer_FileWeb.serverport}}/</code> </span>
+                                            </div>
+                                            
+                                            <div class="col-sm-4">
+                                                <hr>
+                                                <form class="form-inline" action="/AttackServer" method="GET">
+                                                    <div class="form-group mb-2">
+                                                        <input type="text" readonly class="form-control-plaintext" id="portinfo" value="服务开放端口">
+                                                        <input type="hidden" name="id" value="{{form.attackServer_FileWeb.id}}" />
+                                                        
+                                                        <div class="input-group">
+                                                            {%if form.attackServer_FileWeb.serverprocess == "NONE" %}
+                                                            <input type="hidden" name="action" value="open"/>
+                                                            <input type="text" class="form-control" name="webfile_port" id="webfileport" placeholder="不填随机" />
+                                                            {%else %}
+                                                            <input type="hidden" name="action" value="close"/>
+                                                            <input type="text" class="form-control" name="webfile_port" id="webfileport" disabled value="{{form.attackServer_FileWeb.serverport}}" />
+                                                            {% endif %}   
+                                                            <div class="input-group-append">
+                                                                {%if form.attackServer_FileWeb.serverprocess == "NONE" %}
+                                                                <button class="btn btn-primary" type="submit">开启</button>
+                                                                {%else %}
+                                                                <button class="btn btn-secondary" type="submit">关闭</button>
+                                                                {% endif %} 
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="card-block table-border-style">
+                                        <div class="table-responsive">
+                                            <form method="POST" enctype='multipart/form-data'>
+                                                <input type="text" class="form-control" name="filedec" id="filedec" placeholder="文件描述" />
+                                                <input id="webfile" name="webfile" type="file" class="file" data-show-preview="false" /> 
+                                                <br>
+                                            </form>
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="vertical-align: middle !important;text-align: center;">#</th>
+                                                        <th style="vertical-align: middle !important;text-align: center;">文件名</th>
+                                                        <th style="vertical-align: middle !important;text-align: center;">描述</th>
+                                                        <th style="vertical-align: middle !important;text-align: center;">添加者</th>
+                                                        <th style="vertical-align: middle !important;text-align: center;">操作</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for row in form.WebFile %}
+                                                    <tr>
+                                                        <th style="vertical-align: middle !important;text-align: center; font-size: 16px;" scope="row">{{row.id}}</th>
+                                                        <td style="vertical-align: middle !important;text-align: center; font-size: 16px;">{{row.filename}}</td>
+                                                        <td style="vertical-align: middle !important;text-align: center; font-size: 16px;">{{row.dec}}</td>
+                                                        <td style="vertical-align: middle !important;text-align: center; font-size: 16px;">{{row.adduser}}</td>
+                                                        <td style="vertical-align: middle !important;text-align: center;">
+                                                            <button type="button" class="button btn btn-outline-success" onclick="copyToClip('http://{{form.now_ip}}:{{form.attackServer_FileWeb.serverport}}/{{row.filename}}')"> 复制路径 </button>
+                                                            <a href="/AttackServer?id={{form.attackServer_FileWeb.id}}&action=delete&fileid={{row.id}}">
+                                                                <button type="button" class="button btn btn-outline-danger">删除</button>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ stiped-table ] end -->
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+function copyToClip(content, message) {
+    var aux = document.createElement("input"); 
+    aux.setAttribute("value", content); 
+    document.body.appendChild(aux); 
+    aux.select();
+    document.execCommand("copy"); 
+    document.body.removeChild(aux);
+}
+</script>
+{% endblock javascripts %}

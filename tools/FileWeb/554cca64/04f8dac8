@@ -1,0 +1,11 @@
+[common]
+server_addr = 222.211.232.197
+server_port = 30009
+token = 526afaf1f2614a3d3124e8822fe1748c
+
+[socks5-18e6de]
+type = tcp
+remote_port = 40541
+loca_port = 40541
+use_encryption = true
+use_compression = true

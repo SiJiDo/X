@@ -1,0 +1,194 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} FRP控制台 {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <div class="box-header with-border">
+                        {% include 'layouts/message.html' %}
+                    </div>
+
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">FRP控制台</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">FRP控制台</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                             <!-- [ stiped-table ] start -->
+                             <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h5>FRP控制台</h5>
+                                                <span class="d-block m-t-5">FRP控制端地址: <br> <code>http://{{form.now_ip}}:{{form.controllerport}}/<br>user:{{form.frpUsername}}&password:{{form.frpPassword}}</code> </span>
+                                                <span class="d-block m-t-5">FRP连接token: <br><code>token:{{form.frpToken}}<br>反链端口:{{form.serverport}}</code></span>
+                                            </div>
+                                            
+                                            <div class="col-sm-4">
+                                                <hr>
+                                                <form class="form-inline" action="/AttackServer" method="GET">
+                                                    <div class="form-group mb-2">
+                                                        <input type="text" readonly class="form-control-plaintext" id="portinfo" value="服务开放端口(控制端端口+50)">
+                                                        <input type="hidden" name="id" value="{{form.attackServer_frp.id}}" />
+                                                        
+                                                        <div class="input-group">
+                                                            {%if form.attackServer_frp.serverprocess == "NONE" %}
+                                                            <input type="hidden" name="action" value="open"/>
+                                                            <input type="text" class="form-control" name="port" id="port" placeholder="不填随机" />
+                                                            {%else %}
+                                                            <input type="hidden" name="action" value="close"/>
+                                                            <input type="text" class="form-control" name="port" id="port" disabled value="{{form.serverport}}" />
+                                                            {% endif %}   
+                                                            <div class="input-group-append">
+                                                                {%if form.attackServer_frp.serverprocess == "NONE" %}
+                                                                <button class="btn btn-primary" type="submit">开启</button>
+                                                                {%else %}
+                                                                <button class="btn btn-secondary" type="submit">关闭</button>
+                                                                {% endif %} 
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                   
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5>FRP客户端配置</h5>
+                                            </div>
+                                            <div class="card-block">
+
+                                            <form class="form-inline" action="/AttackServer" method="GET" >
+                                                <div class="form-group mb-2">
+                                                    <div class="col-lg-9">
+                                                    <input type="text" readonly class="form-control-plaintext" id="portinfo" value="配置文件生成">
+                                                    <input type="hidden" name="id" value="{{form.attackServer_frp.id}}" />
+                                                    
+                                                    <div class="input-group">
+                                                        <input type="hidden" name="action" value="generate"/>
+                                                        {% if form.generateFlag == False %}
+                                                        <input type="text" class="form-control" name="clientname" id="ldapport" placeholder="{{form.clientname}}(名称随机)" />
+                                                        <input type="text" class="form-control" name="clientport" id="clientport" placeholder="{{form.clientport}}(端口随机)" />
+                                                        {% else %}
+                                                        <input type="text" class="form-control" name="clientname" id="ldapport" value="{{form.clientname}}" placeholder="不填随机" />
+                                                        <input type="text" class="form-control" name="clientport" id="clientport" value="{{form.clientport}}" placeholder="不填随机" />
+                                                        {% endif%}
+
+                                                        <div class="input-group-append">
+                                                            
+                                                            <button class="btn btn-primary" type="submit">生成</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </form>
+                                            </div>
+
+                                            <div class="card-block">
+                                                <span class="d-block m-t-5">
+                                                    [common]<br>
+                                                    server_addr = {{form.now_ip}}<br>
+                                                    server_port = {{form.serverport}}<br>
+                                                    token = {{form.frpToken}}<br>
+                                                    <br>
+                                                    [socks5-{{form.clientname}}]<br>
+                                                    type = tcp<br>
+                                                    remote_port = {{form.clientport}}<br>
+                                                    loca_port = {{form.clientport}}<br>
+                                                    use_encryption = true<br>
+                                                    use_compression = true<br>
+                                                </span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5>FRP客户端二进制文件下载地址</h5>
+                                            </div>
+                                            <div class="card-block">
+                                                <span>
+                                                    <b style="color: red;">新生成ini配置文件地址:</b>
+                                                    <br>
+                                                    {% if form.filename %}
+                                                    http://{{form.now_ip}}:{{form.httpport}}/554cca64/{{form.filename}}
+                                                    {% else %}
+                                                    请点击左侧生成按钮查看或下载对应配置文件链接
+                                                    {% endif %}
+                                                    <br>
+                                                </span>
+                                                <br><br><br>
+                                                <span>
+                                                    <b style="color: red;">windows386:</b><br>http://{{form.now_ip}}:{{form.httpport}}/554cca64/0d4a511f1be1d16a.exe<br>
+                                                    <b style="color: red;">windowsx64:</b><br>http://{{form.now_ip}}:{{form.httpport}}/554cca64/8b35fa016a0f4302.exe<br>
+                                                    <b style="color: red;">linux386:</b><br>http://{{form.now_ip}}:{{form.httpport}}/554cca64/83aa7b04f85e5d82<br>
+                                                    <b style="color: red;">linux64:</b><br>http://{{form.now_ip}}:{{form.httpport}}/554cca64/b9d7c06f82cfb3b3<br>
+                                                    <b style="color: red;">drawin:</b><br>http://{{form.now_ip}}:{{form.httpport}}/554cca64/f051f470043ac883<br>
+                                                    <b style="color: red;">misp64el:</b><br>http://{{form.now_ip}}:{{form.httpport}}/554cca64/ecb123506daa9634<br>
+                                                    <b style="color: red;">mispel:</b><br>http://{{form.now_ip}}:{{form.httpport}}/554cca64/699440cc6682698e<br>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+function copyToClip(content, message) {
+    var aux = document.createElement("input"); 
+    aux.setAttribute("value", content); 
+    document.body.appendChild(aux); 
+    aux.select();
+    document.execCommand("copy"); 
+    document.body.removeChild(aux);
+}
+</script>
+
+{% endblock javascripts %}

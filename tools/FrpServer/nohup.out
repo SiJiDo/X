@@ -1,0 +1,203 @@
+nohup: frps_mac: No such file or directory
+nohup: frps_mac: No such file or directory
+2022/10/19 19:45:52 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 19:45:53 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 19:45:53 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 19:46:57 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+Create server listener error, listen tcp 0.0.0.0:7000: bind: address already in use
+2022/10/19 19:55:17 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 19:55:17 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 19:55:17 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 19:59:51 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 19:59:51 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 19:59:51 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:08:41 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:08:41 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:08:41 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:09:42 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:09:42 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:09:42 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:12:54 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:12:54 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:12:54 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:15:31 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:15:32 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:15:32 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:15:34 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:15:34 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:15:34 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:15:50 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:15:50 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:15:50 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:16:40 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:16:40 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:16:40 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:16:42 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:16:42 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:16:42 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:16:45 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:16:45 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:16:45 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:16:50 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:16:50 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:16:50 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:17:25 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:17:25 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:17:25 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:17:28 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:17:28 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:17:28 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:17:33 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:17:33 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:17:33 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:17:53 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:17:53 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:17:53 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:17:57 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:17:57 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:17:57 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:18:25 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:18:26 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:18:26 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:20:43 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:20:43 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:20:43 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:20:48 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+Create server listener error, listen tcp 0.0.0.0:7000: bind: address already in use
+2022/10/19 20:21:30 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:21:30 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:21:30 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:21:33 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:21:33 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:21:33 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:21:36 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:21:36 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:21:36 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:22:05 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+Create server listener error, listen tcp 0.0.0.0:7000: bind: address already in use
+2022/10/19 20:22:10 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:22:10 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:22:10 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:26:40 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:26:40 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:26:40 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:27:50 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:27:50 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:7000[0m
+2022/10/19 20:27:50 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:32:47 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:32:47 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30806[0m
+2022/10/19 20:32:47 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30856[0m
+2022/10/19 20:32:47 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:33:16 [1;34m[I] [dashboard_api.go:70] Http request: [/api/serverinfo][0m
+2022/10/19 20:33:16 [1;34m[I] [dashboard_api.go:63] Http response [/api/serverinfo]: code [200][0m
+2022/10/19 20:33:17 [1;34m[I] [dashboard_api.go:185] Http request: [/api/proxy/tcp][0m
+2022/10/19 20:33:17 [1;34m[I] [dashboard_api.go:179] Http response [/api/proxy/tcp]: code [200][0m
+2022/10/19 20:33:18 [1;34m[I] [dashboard_api.go:185] Http request: [/api/proxy/udp][0m
+2022/10/19 20:33:18 [1;34m[I] [dashboard_api.go:179] Http response [/api/proxy/udp]: code [200][0m
+2022/10/19 20:33:19 [1;34m[I] [dashboard_api.go:185] Http request: [/api/proxy/tcp][0m
+2022/10/19 20:33:19 [1;34m[I] [dashboard_api.go:179] Http response [/api/proxy/tcp]: code [200][0m
+2022/10/19 20:41:24 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:41:24 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30015[0m
+2022/10/19 20:41:24 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30065[0m
+2022/10/19 20:41:24 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:42:18 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:42:18 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30968[0m
+2022/10/19 20:42:18 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:31018[0m
+2022/10/19 20:42:18 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/19 20:50:57 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/19 20:50:58 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30522[0m
+2022/10/19 20:50:58 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30572[0m
+2022/10/19 20:50:58 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/22 11:56:59 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/22 11:56:59 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30634[0m
+2022/10/22 11:56:59 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30684[0m
+2022/10/22 11:56:59 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/22 14:50:27 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/22 14:50:28 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30082[0m
+2022/10/22 14:50:28 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30132[0m
+2022/10/22 14:50:28 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/22 14:51:15 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/22 14:51:15 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30710[0m
+2022/10/22 14:51:15 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30760[0m
+2022/10/22 14:51:15 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/22 15:50:18 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/22 15:50:18 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30786[0m
+2022/10/22 15:50:18 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30836[0m
+2022/10/22 15:50:18 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/22 15:55:07 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/22 15:55:08 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30770[0m
+2022/10/22 15:55:08 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30820[0m
+2022/10/22 15:55:08 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/22 19:45:31 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/22 19:45:31 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30440[0m
+2022/10/22 19:45:31 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30490[0m
+2022/10/22 19:45:31 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/22 19:46:10 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/22 19:46:10 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30363[0m
+2022/10/22 19:46:10 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30413[0m
+2022/10/22 19:46:10 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/22 19:49:06 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/22 19:49:06 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30814[0m
+2022/10/22 19:49:06 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30864[0m
+2022/10/22 19:49:06 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/22 20:13:21 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/22 20:13:21 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30692[0m
+2022/10/22 20:13:21 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30742[0m
+2022/10/22 20:13:21 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/31 10:10:11 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/31 10:10:11 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30175[0m
+2022/10/31 10:10:11 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30225[0m
+2022/10/31 10:10:11 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/31 10:10:29 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/31 10:10:29 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30418[0m
+2022/10/31 10:10:29 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30468[0m
+2022/10/31 10:10:29 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/31 10:11:12 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/31 10:11:12 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30840[0m
+2022/10/31 10:11:12 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30890[0m
+2022/10/31 10:11:12 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/31 10:11:42 [1;34m[I] [dashboard_api.go:70] Http request: [/api/serverinfo][0m
+2022/10/31 10:11:42 [1;34m[I] [dashboard_api.go:63] Http response [/api/serverinfo]: code [200][0m
+2022/10/31 10:11:44 [1;34m[I] [dashboard_api.go:185] Http request: [/api/proxy/tcp][0m
+2022/10/31 10:11:44 [1;34m[I] [dashboard_api.go:179] Http response [/api/proxy/tcp]: code [200][0m
+2022/10/31 10:11:44 [1;34m[I] [dashboard_api.go:70] Http request: [/api/serverinfo][0m
+2022/10/31 10:11:44 [1;34m[I] [dashboard_api.go:63] Http response [/api/serverinfo]: code [200][0m
+2022/10/31 10:11:44 [1;34m[I] [dashboard_api.go:185] Http request: [/api/proxy/tcp][0m
+2022/10/31 10:11:44 [1;34m[I] [dashboard_api.go:179] Http response [/api/proxy/tcp]: code [200][0m
+2022/10/31 10:59:21 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/31 10:59:21 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30737[0m
+2022/10/31 10:59:21 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30787[0m
+2022/10/31 10:59:21 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/31 10:59:32 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/31 10:59:32 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30457[0m
+2022/10/31 10:59:32 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30507[0m
+2022/10/31 10:59:32 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/10/31 17:20:04 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/10/31 17:20:04 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30060[0m
+2022/10/31 17:20:04 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30110[0m
+2022/10/31 17:20:04 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/12/01 10:51:08 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/12/01 10:51:08 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30209[0m
+2022/12/01 10:51:08 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30259[0m
+2022/12/01 10:51:08 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/12/01 10:51:26 [1;34m[I] [dashboard_api.go:70] Http request: [/api/serverinfo][0m
+2022/12/01 10:51:26 [1;34m[I] [dashboard_api.go:63] Http response [/api/serverinfo]: code [200][0m
+2022/12/01 10:51:28 [1;34m[I] [dashboard_api.go:185] Http request: [/api/proxy/tcp][0m
+2022/12/01 10:51:28 [1;34m[I] [dashboard_api.go:179] Http response [/api/proxy/tcp]: code [200][0m
+2022/12/01 10:51:29 [1;34m[I] [dashboard_api.go:185] Http request: [/api/proxy/udp][0m
+2022/12/01 10:51:29 [1;34m[I] [dashboard_api.go:179] Http response [/api/proxy/udp]: code [200][0m
+2022/12/01 10:51:29 [1;34m[I] [dashboard_api.go:185] Http request: [/api/proxy/tcp][0m
+2022/12/01 10:51:29 [1;34m[I] [dashboard_api.go:179] Http response [/api/proxy/tcp]: code [200][0m
+2022/12/01 17:29:41 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/12/01 17:29:43 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/12/01 17:29:43 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30957[0m
+2022/12/01 17:29:43 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:31007[0m
+2022/12/01 17:29:43 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/12/02 09:41:19 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/12/02 09:41:19 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30807[0m
+2022/12/02 09:41:19 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30857[0m
+2022/12/02 09:41:19 [1;34m[I] [root.go:218] frps started successfully[0m
+2022/12/02 15:16:33 [1;34m[I] [root.go:209] frps uses config file: config.ini[0m
+2022/12/02 15:16:33 [1;34m[I] [service.go:194] frps tcp listen on 0.0.0.0:30009[0m
+2022/12/02 15:16:33 [1;34m[I] [service.go:293] Dashboard listen on 0.0.0.0:30059[0m
+2022/12/02 15:16:33 [1;34m[I] [root.go:218] frps started successfully[0m

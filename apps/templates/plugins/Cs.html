@@ -1,0 +1,104 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Cobaltstrike模块 {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <div class="box-header with-border">
+                        {% include 'layouts/message.html' %}
+                    </div>
+
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Cobaltstrike模块</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">Cobaltstrike模块</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                             <!-- [ stiped-table ] start -->
+                             <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h5>Cobaltstrike模块</h5>
+                                                <span class="d-block m-t-5">CS服务地址: <br><code>{{form.now_ip}}:{{form.csport}}</code> </span>
+                                                <span class="d-block m-t-5">CS登录密码:<br> <code>{{form.cspassword}}</code> </span>
+                                                <span class="d-block m-t-5">CS客户端下载地址:<br> <code>http://{{form.now_ip}}:{{form.httpport}}/554cca64/cs42client.zip</code> </span>
+                                            </div>
+                                            
+                                            <div class="col-sm-4">
+                                                <hr>
+                                                <form class="form-inline" action="/AttackServer" method="GET">
+                                                    <div class="form-group mb-2">
+                                                        <input type="text" readonly class="form-control-plaintext" id="portinfo" value="CS连接端口">
+                                                        <input type="hidden" name="id" value="{{form.id}}" />
+                                                        
+                                                        <div class="input-group">
+                                                            {%if form.cspassword == "NONE" %}
+                                                            <input type="hidden" name="action" value="open"/>
+                                                            <input type="text" class="form-control" name="csport" id="csport" placeholder="" />
+                                                            {% else %}
+                                                            <input type="hidden" name="action" value="close"/>
+                                                            <input type="text" class="form-control" name="csport" id="csport" disabled value="{{form.csport}}" />
+                                                            {% endif %}
+                                                           
+                                                            <div class="input-group-append">
+                                                                {%if form.cspassword == "NONE" %}
+                                                                <button class="btn btn-primary" type="submit">开启</button>
+                                                                {%else %}
+                                                                <button class="btn btn-secondary" type="submit">关闭</button>
+                                                                {% endif %} 
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </form>
+                                                
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- [ text Content ] start -->
+                            </div>
+                            <!-- [ stiped-table ] end -->
+
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}
